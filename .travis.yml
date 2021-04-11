@@ -13,7 +13,7 @@
    - sys-img-armeabi-v7a-android-22
 
  before_install:
-   - - yes | sudo sdkmanager --licenses
+   - yes | sudo sdkmanager --licenses
    - yes | sdkmanager "platforms;android-28"
 
  before_script:

@@ -24,19 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Login'),
-        actions: <Widget>[
-          TextButton(
-            child: Row(
-              children: <Widget>[
-                Text('Register'),
-                Icon(Icons.person_add)
-              ],
-            ),
-            onPressed: (){
-              Navigator.of(context).pushReplacementNamed(UserRegister.routeName);
-            },
-          )
-        ],
+        centerTitle: true,
       ),
       body: Stack(
         children: <Widget>[
@@ -56,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: Container(
-                height: 260,
+                height: 400,
                 width: 300,
                 padding: EdgeInsets.all(16),
                 child: Form(
@@ -100,11 +88,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             },
                         ),
                         SizedBox(
-                          height: 30,
+                          height: 20,
                         ),
                         ElevatedButton(
                           child: Text(
-                            'sign in as Patient'
+                            'Sign in as Patient'
                           ),
                           onPressed: ()
                             {
@@ -113,17 +101,29 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         ),
                         SizedBox(
-                          height: 30,
+                          height: 15,
                         ),
                         ElevatedButton(
                           child: Text(
-                              'sign in as Doctor'
+                              'Sign in as Doctor'
                           ),
                           onPressed: ()
                           {
                             _submit();
                           },
                         ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        ElevatedButton(
+                          child:  Text(
+                            'Register'
+                          ),
+                          onPressed: ()
+                          {
+                            Navigator.of(context).pushReplacementNamed(UserRegister.routeName);
+                          },
+                          ),
                       ],
                     ),
                   ),

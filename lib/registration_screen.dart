@@ -17,6 +17,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   TextEditingController _passwordController = new TextEditingController();
 
   Map<String, String> _authData = {
+    'Name'
+    'Surname'
+    'Address'
+    'Contact'
     'email' : '',
     'password' : ''
   };
@@ -30,6 +34,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     _formKey.currentState.save();
 
     await Provider.of<Authentication>(context, listen: false).register(
+        _authData['Name'],
+        _authData['Surname'],
+        _authData['Address'],
+        _authData['Contact'],
         _authData['email'],
         _authData['password']);
   }
@@ -39,6 +47,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Patient Registration'),
+        automaticallyImplyLeading: true,
         actions: <Widget>[
           FlatButton(
             child: Row(
@@ -72,7 +81,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: Container(
-                height: 400,
+                height: 450,
                 width: 300,
                 padding: EdgeInsets.all(16),
                 child: Form(
@@ -80,6 +89,44 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
+
+                        //First name
+                        TextFormField(
+                            decoration: InputDecoration(labelText: 'First name'),
+                            keyboardType: TextInputType.name,
+                            onSaved: (value)
+                            {
+                              _authData['Name'] = value;
+                            }
+                        ),
+
+                        //Last Name
+                        TextFormField(
+                            decoration: InputDecoration(labelText: 'Last name'),
+                            keyboardType: TextInputType.name,
+                            onSaved: (value)
+                            {
+                              _authData['Surname'] = value;
+                            }
+                        ),
+                        TextFormField(
+                            decoration: InputDecoration(labelText: 'Home Address'),
+                            keyboardType: TextInputType.streetAddress,
+                            onSaved: (value)
+                            {
+                              _authData['Address'] = value;
+                            }
+                        ),
+
+                        //Phone number of the patient
+                        TextFormField(
+                            decoration: InputDecoration(labelText: 'Contact'),
+                            keyboardType: TextInputType.phone,
+                            onSaved: (value)
+                            {
+                              _authData['Contact'] = value;
+                            }
+                        ),
 
                         //Email
                         TextFormField(

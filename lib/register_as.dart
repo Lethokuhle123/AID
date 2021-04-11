@@ -15,6 +15,7 @@ class _UserRegisterState extends State<UserRegister>{
        title: Text('Register as'),
        backgroundColor: Colors.blue,
        centerTitle: true,
+       automaticallyImplyLeading: true,
 
      ),
       body: Stack(
@@ -70,7 +71,7 @@ class _UserRegisterState extends State<UserRegister>{
                             ),
                             onPressed: ()
                             {
-                              Navigator.of(context).pushReplacementNamed(RegistrationScreen.routeName);
+
                             },
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),

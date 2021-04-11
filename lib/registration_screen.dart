@@ -49,14 +49,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         title: Text('Patient Registration'),
         automaticallyImplyLeading: true,
         actions: <Widget>[
-          FlatButton(
+          TextButton(
             child: Row(
               children: <Widget>[
                 Text('Login'),
                 Icon(Icons.person)
               ],
             ),
-            textColor: Colors.white,
             onPressed: (){
               Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
             },
@@ -185,7 +184,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         SizedBox(
                           height: 30,
                         ),
-                        RaisedButton(
+                        ElevatedButton(
                           child: Text(
                               'submit'
                           ),
@@ -193,12 +192,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           {
                             _submit();
                           },
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-
-                          ),
-                          color: Colors.blueGrey,
-                          textColor: Colors.white,
                         )
                       ],
                     ),

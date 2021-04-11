@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_registration/register_as.dart';
 import 'package:provider/provider.dart';
 //import 'dart:async';
 import 'dart:core';
@@ -37,9 +38,13 @@ class MyApp extends StatelessWidget {
           RegistrationScreen.routeName: (ctx)=> RegistrationScreen(),
           LoginScreen.routeName: (ctx)=> LoginScreen(),
           HomeScreen.routeName: (ctx)=> HomeScreen(),
+          UserRegister.routeName: (ctx)=> UserRegister(),
+
+
         },
       ),
     );
   }
+
   
 }

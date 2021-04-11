@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_app_registration/registration_screen.dart';
+import 'package:flutter_app_registration/register_as.dart';
+
 
 
 class LoginScreen extends StatefulWidget {
@@ -24,16 +25,15 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         title: Text('Login'),
         actions: <Widget>[
-          FlatButton(
+          TextButton(
             child: Row(
               children: <Widget>[
                 Text('Register'),
                 Icon(Icons.person_add)
               ],
             ),
-            textColor: Colors.white,
             onPressed: (){
-              Navigator.of(context).pushReplacementNamed(RegistrationScreen.routeName);
+              Navigator.of(context).pushReplacementNamed(UserRegister.routeName);
             },
           )
         ],
@@ -102,18 +102,28 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(
                           height: 30,
                         ),
-                        RaisedButton(
+                        ElevatedButton(
                           child: Text(
-                            'submit'
+                            'sign in as Patient'
                           ),
                           onPressed: ()
                             {
                               _submit();
                             },
-                          shape: RoundedRectangleBorder(
 
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        ElevatedButton(
+                          child: Text(
+                              'sign in as Doctor'
                           ),
-                        )
+                          onPressed: ()
+                          {
+                            _submit();
+                          },
+                        ),
                       ],
                     ),
                   ),
